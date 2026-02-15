@@ -1,0 +1,698 @@
+:root {
+  /* Colors */
+  --color-accent: #ff5c8a;
+  --color-secondary: #7c3aed;
+  --color-text: #e6eef8;
+  --color-muted: #9aa6bf;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Backgrounds */
+  --bg-main: linear-gradient(120deg, #0f172a, #071032);
+  --bg-card: rgba(255, 255, 255, 0.03);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Animation */
+  --transition-fast: 0.25s ease;
+  --transition-slow: 0.6s ease;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+/*  scrollbar-gutter: stable;*/
+}
+
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui;
+  background: var(--bg-main);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+.header {
+  --header-padding: 28px 36px;
+
+  padding: var(--header-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo__mark {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+
+.btn {
+  --btn-padding: 10px 16px;
+  --btn-radius: var(--radius-md);
+
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  border: none;
+
+  background: none;
+  color: inherit;
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Основная */
+.btn.cta {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
+}
+
+/* Призрачная */
+.btn.ghost {
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Кнопка-ссылка */
+.btn_ghost {
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
+
+  color: inherit;
+  transition: var(--transition-slow);
+}
+
+.btn_ghost:hover {
+   transition: var(--transition-fast);
+}
+
+.card {
+  --card-padding: 20px;
+  --card-radius: var(--radius-lg);
+
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  background: var(--bg-card);
+}
+
+
+
+.hero {
+  --hero-padding: 48px 36px;
+
+  padding: var(--hero-padding);
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+}
+
+.hero__title {
+  font-size: 30px;
+}
+
+.hero__tag {
+  color: var(--color-muted);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+}
+
+
+.project {
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+
+
+.project__thumb {
+   overflow: hidden;
+   border-radius: 10px;
+}
+
+
+.project__thumb img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: .2s;
+}
+
+.project__thumb img:hover {
+   transform: scale(1.1);
+}
+
+.coffee {
+  transition: .3s;
+}
+
+
+
+.live {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 5px 13px;
+  border-radius: var(--radius-sm);
+
+  background: linear-gradient(90deg,var(--color-accent), var(--color-secondary));
+
+  z-index: 2;
+}
+
+
+
+.portfolio,
+.pricing {
+  padding: 36px;
+}
+
+.section-title {
+  font-size: 30px;
+}
+
+.portfolio__grid,
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* ===================== */
+/* PRICING CARDS */
+/* ===================== */
+
+.pricing__grid {
+  align-items: stretch;
+}
+
+.plan {
+  --plan-border: rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  border: 1px solid var(--plan-border);
+  transition: var(--transition-fast);
+}
+
+.plan:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+}
+
+/* Название тарифа */
+.plan h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+/* Цена */
+.price {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Описание */
+.plan .dis {
+  margin-top: 8px;
+}
+
+/* Список */
+.plan li {
+  list-style: none;
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* Галочка */
+.plan li::before {
+  content: "\2714";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Кнопка внизу */
+.plan .btn {
+  margin-top: auto;
+}
+
+.plan:nth-child(3) {
+  border: none;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 92, 138, 0.15),
+    rgba(124, 58, 237, 0.15)
+  );
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+
+
+
+.plan.recommended {
+  position: relative;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+}
+
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: -5px;
+
+  padding: 10px 14px;
+  font-size: 20px;
+  font-weight: 600;
+
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
+}
+
+
+
+
+
+.currency-switch {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.currency-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.currency-btn.active {
+  background: var(--color-accent);
+}
+
+
+
+.plan__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* ===================== */
+/* MODAL */
+/* ===================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.modal.active {
+  display: block;
+}
+
+/* Фон */
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(16px);
+}
+
+/* Контент */
+.modal__content {
+  position: relative;
+  max-width: 420px;
+  margin: 25vh auto;
+  padding: 28px;
+  background:   background: rgba(0,0,0,0.95);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  animation: scaleIn 0.6s ease;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Закрыть */
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 26px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.modal__close:hover {
+  color: #ff0000;
+}
+
+/* Текст */
+.modal__title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.modal__subtitle {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* Форма */
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal__form input {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: inherit;
+}
+
+.modal__form input::placeholder {
+  color: var(--color-muted);
+}
+
+/* Кнопка во всю ширину */
+.btn.full {
+  width: 100%;
+}
+
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.form-step.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.form-step.exit-left {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+
+.modal__form label {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.modal__form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.prev,
+.next {
+   border: 1px solid #fff;
+
+}
+
+
+#modalPlan {
+   font-size: 20px;
+   color: #ff5c8a;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal__success {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,15,35,0.60);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: .4s ease;
+}
+
+.modal__success.active {
+  opacity: 1;
+  pointer-events: auto;
+  animation: .3s scaleIn;
+}
+
+
+
+.wa-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.wa-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wa-modal__content {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: translateY(20px);
+  transition: 0.3s ease;
+}
+
+.wa-modal.active .wa-modal__content {
+  transform: translateY(0);
+}
+
+.wa-modal h3 {
+  margin-bottom: 10px;
+}
+
+.wa-modal p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.wa-modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-cancel {
+  background: #333;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-confirm {
+  background: linear-gradient(90deg, #25D366, #1ebe5d);
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+
+.progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+  transition: 1s ease;
+}
+
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.lightbox_close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.lightbox_close:hover {
+  color: red;
+}

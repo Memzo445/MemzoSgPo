@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>MemzoSgPo — Portfolio</title>
+    <title>MemzoSgPo — Web-Developer</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -50,13 +50,7 @@
 
                 <div class="wa-modal__actions">
                     <button class="btn-cancel" id="waCancel">Отмена</button>
-                    <a
-                            href="https://wa.me/77024874108?text=Здравствуйте,%20хочу%20узнать%20подробнее%20о%20разработке%20лендингов"
-                            target="_blank"
-                            class="btn-confirm"
-                    >Перейти
-
-                    </a>
+                    <a href="https://wa.me/77024874108?text=Здравствуйте,%20хочу%20узнать%20подробнее%20о%20разработке%20лендингов" target="_blank" class="btn-confirm">Перейти</a>
                 </div>
             </div>
         </div>
@@ -75,8 +69,12 @@
                     <img src="https://files.catbox.moe/d3ie81.png" alt="coffee" onclick="openLightbox(0)">
                 </div>
                 <h3>Coffee House</h3>
-                <p>Витрина кафе</p>
-                <a href="https://coffee-house-view-memzo.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+                <p>Современный адаптивный лендинг для кофейного бренда</p>
+                <p><strong>Стек:</strong> HTML, CSS, JavaScript</p>
+                <div class="btns">
+                    <a href="https://coffee-house-view-memzo.netlify.app" target="_blank" class="btn cta">Открыть</a>
+                    <a class="btn ghost" onclick="openLightbox(0)">Подробнее. . .</a>
+                </div>
             </article>
 
 
@@ -85,8 +83,12 @@
                     <img src="https://files.catbox.moe/229rgz.png" alt="cozy" onclick="openLightbox(1)">
                 </div>
                 <h3>COZY VIEW</h3>
-                <p>Ремонт квартир</p>
-                <a href="https://cozyviewprodaction.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+                <p>Cozy View — сайт по ремонту квартир лендинг для компании по ремонту квартир.</p>
+                <p><strong>Стек:</strong> HTML, CSS, JavaScript</p>
+                <div class="btns">
+                    <a href="https://cozyviewprodaction.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+                    <a class="btn ghost" onclick="openLightbox(0)">Подробнее. . .</a>
+                </div>
             </article>
 
 
@@ -95,8 +97,13 @@
                     <img src="https://files.catbox.moe/0s5ycm.png" alt="magenta" onclick="openLightbox(2)">
                 </div>
                 <h3>WebApp</h3>
-                <p>Экспериментальный лендинг</p>
-                <a href="https://magenta-tartufo-6e49b0.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+                <p>Современный лендинг для онлайн-курса по веб-дизайну.</p>
+                <p><strong>Стек:</strong> HTML, CSS, JavaScript</p>
+
+                <div class="btns">
+                    <a href="https://magenta-tartufo-6e49b0.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+                    <a class="btn ghost" onclick="openLightbox(0)">Подробнее. . .</a>
+                </div>
             </article>
         </div>
     </section>
@@ -228,11 +235,22 @@
 </div>
 
 <div class="lightbox" id="lightbox">
-    <span class="lightbox_close" onclick="closeLightbox()">×</span>
+    <div class="lightbox_content">
 
-    <img id="lightbox_img" src="">
+        <span class="lightbox_close" onclick="closeLightbox()">×</span>
+
+        <div class="lightbox_left">
+            <img id="lightbox_img" src="">
+        </div>
+
+        <div class="lightbox_right">
+            <h2 id="lightbox_title"></h2>
+            <p id="lightbox_text"></p>
+            <a id="lightbox_link" href="#" target="_blank" class="lightbox_btn">Открыть сайт</a>
+        </div>
+
+    </div>
 </div>
-
 
 </body>
 <script src="main.js"></script>

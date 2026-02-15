@@ -1,0 +1,137 @@
+/* =======================================
+   ADAPTIVE
+   ======================================= */
+
+/* -------- 1200px -------- */
+@media (max-width: 1200px) {
+
+  .hero {
+    grid-template-columns: 1fr 350px;
+  }
+
+  .portfolio__grid,
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* -------- 992px -------- */
+@media (max-width: 992px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .portfolio__grid,
+  .pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+
+/* -------- 768px -------- */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header {
+    padding: 20px;
+
+    gap: 16px;
+  }
+
+  .nav {
+    justify-content: space-between;
+
+  }
+
+  /* HERO */
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero__title {
+    font-size: 24px;
+  }
+
+  .hero__text {
+    font-size: 14px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+
+
+  /* GRID */
+  .portfolio__grid,
+  .pricing__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* MODAL */
+  .modal__content {
+    margin: 10vh 20px;
+    max-width: 100%;
+  }
+
+}
+
+
+/* -------- 480px -------- */
+@media (max-width: 480px) {
+     .none {display: none;}
+    .btn.cta{font-size: 15px;}
+    .logo__name{font-size: 20px;}
+    .logo__role{font-size: 10px;}
+
+  .header {
+    padding: 16px;
+  }
+
+  .logo__mark {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .hero__title {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .plan li {
+    font-size: 13px;
+  }
+
+  .modal__content {
+    padding: 18px;
+  }
+
+  .wa-modal__content {
+    padding: 20px;
+  }
+
+
+.pricing__grid{gap: 40px;}
+
+
+}

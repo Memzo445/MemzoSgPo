@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>MemzoSgPo — Portfolio</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="adaptive.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <div class="logo__mark">CV</div>
+        <div>
+            <div class="logo__name">MemzoSgPo</div>
+            <div class="logo__role">Frontend & Web Dev</div>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <a class="btn ghost none" href="#portfolio">Портфолио</a>
+        <a class="btn cta" href="#pricing">Тарифы</a>
+    </nav>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero__content">
+            <span class="hero__tag">Привет — я делаю визуальные сайты</span>
+            <h2 class="hero__title">Современные лендинги с анимацией и эффектами</h2>
+            <p class="hero__text">Фокус на дизайн, адаптив и hover‑эффекты. Без шаблонов.</p>
+            <div class="hero__actions">
+                <a href="#portfolio" class="btn cta">Портфолио</a>
+                <button class="btn ghost" id="contactBtn">Связаться</button>
+            </div>
+        </div>
+
+
+        <div class="wa-modal" id="waModal">
+            <div class="wa-modal__content">
+                <h3>Переход в WhatsApp</h3>
+                <p>Вы будете перенаправлены в WhatsApp для связи с нами.</p>
+
+                <div class="wa-modal__actions">
+                    <button class="btn-cancel" id="waCancel">Отмена</button>
+                    <a
+                            href="https://wa.me/77024874108?text=Здравствуйте,%20хочу%20узнать%20подробнее%20о%20разработке%20лендингов"
+                            target="_blank"
+                            class="btn-confirm"
+                    >Перейти
+
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">Последние проекты</h2>
+
+        <div class="portfolio__grid">
+            <article class="project card">
+                <span class="live">Live</span>
+                <div class="project__thumb">
+                    <img src="https://files.catbox.moe/d3ie81.png" alt="coffee" onclick="openLightbox(0)">
+                </div>
+                <h3>Coffee House</h3>
+                <p>Витрина кафе</p>
+                <a href="https://coffee-house-view-memzo.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+            </article>
+
+
+            <article class="project card">
+                <div class="project__thumb">
+                    <img src="https://files.catbox.moe/229rgz.png" alt="cozy" onclick="openLightbox(1)">
+                </div>
+                <h3>COZY VIEW</h3>
+                <p>Ремонт квартир</p>
+                <a href="https://cozyviewprodaction.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+            </article>
+
+
+            <article class="project card">
+                <div class="project__thumb">
+                    <img src="https://files.catbox.moe/0s5ycm.png" alt="magenta" onclick="openLightbox(2)">
+                </div>
+                <h3>WebApp</h3>
+                <p>Экспериментальный лендинг</p>
+                <a href="https://magenta-tartufo-6e49b0.netlify.app" target="_blank" class="btn_ghost">Открыть</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Тарифы</h2>
+
+        <div class="pricing__grid">
+            <div class="plan card">
+                <h3>Start</h3>
+                <span class="price" data-rub="2 500" data-usd="25">от  2 500 ₽</span>
+                <div class="currency-switch">
+                    <button class="currency-btn active" data-currency="rub">₽</button>
+                    <button class="currency-btn" data-currency="usd">$</button>
+                </div>
+                <div class="dis">
+                    <ul class="plan__list">
+                        <li>лендинг до 3 блоков</li>
+                        <li>Aдаптив</li>
+                        <li>hover-эффекты</li>
+                        <li>1 модалка</li>
+                        <li>форма + валидация</li>
+                        <li>без backend</li>
+                    </ul>
+                </div>
+                <button class="btn cta">Выбрать</button>
+
+            </div>
+
+            <div class="plan card recommended">
+                <span class="badge">Рекомендуем</span>
+                <h3>Pro</h3>
+                <span class="price" data-rub="8 000" data-usd="80">от  8 000 ₽</span>
+                <div class="currency-switch">
+                    <button class="currency-btn active" data-currency="rub">₽</button>
+                    <button class="currency-btn" data-currency="usd">$</button>
+                </div>
+                <div class="dis">
+                    <ul class="plan__list">
+                        <li>лендинг до 8–10 блоков</li>
+                        <li>Aдаптив</li>
+                        <li>hover-эффекты</li>
+                        <li>слайдеры</li>
+                        <li>модалки</li>
+                        <li>формы + логика</li>
+                        <li>JS-интерактив</li>
+                        <li>оптимизация UX</li>
+                    </ul>
+                </div>
+                <button class="btn cta">Выбрать</button>
+            </div>
+
+            <div class="plan card">
+                <h3>Premium</h3>
+                <span class="price" data-rub="13 000" data-usd="130">от  13 000 ₽</span>
+                <div class="currency-switch">
+                    <button class="currency-btn active" data-currency="rub">₽</button>
+                    <button class="currency-btn" data-currency="usd">$</button>
+                </div>
+                <div class="dis">
+                    <ul class="plan__list">
+                        <li>всё из Pro</li>
+                        <li>Firebase (комментарии / отзывы)</li>
+                        <li>динамика</li>
+                        <li>сложная логика</li>
+                        <li>подготовка под масштабирование</li>
+                    </ul>
+                </div>
+                <button class="btn cta">Выбрать</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <span>© MemzoSgPo 1.9</span>
+</footer>
+
+
+<div class="modal" id="pricingModal">
+    <div class="modal__overlay"></div>
+
+    <div class="modal__content card">
+        <button class="modal__close">&times;</button>
+
+        <h3 class="modal__title">Заказать тариф</h3>
+        <p class="modal__subtitle">
+            Вы выбрали тариф: <strong id="modalPlan"> Pro</strong>
+        </p>
+
+        <form class="modal__form" novalidate>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+
+            <!-- Шаг 1 -->
+            <div class="form-step active">
+                <label>Введите своё имя</label>
+                <input type="text" name="name" placeholder="Ваше имя" required>
+
+                <button type="button" class="btn next" disabled>Далее</button>
+            </div>
+
+            <!-- Шаг 2 -->
+            <div class="form-step">
+                <label>Введите свою почту</label>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <button type="button" class="btn next" disabled>Далее</button>
+                <button type="button" class="btn prev">Назад</button>
+            </div>
+
+            <!-- Шаг 3 -->
+            <div class="form-step">
+                <label>Как с вами связаться?</label>
+                <input type="text" name="contact" placeholder="@Telegram / WhatsApp +8 708 74 22">
+
+                <button type="button" class="btn prev">Назад</button>
+                <button type="submit" class="btn cta full">Отправить заявку</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal__success">
+        <h3>Заявка отправлена 🚀</h3>
+        <p>Я свяжусь с вами в ближайшее время</p>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="lightbox_close" onclick="closeLightbox()">×</span>
+
+    <img id="lightbox_img" src="">
+</div>
+
+
+</body>
+<script src="main.js"></script>
+</html>

@@ -662,13 +662,16 @@ button {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(20px);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   opacity: 0;
   pointer-events: none;
-  transition: .3s;
+  transition: .4s ease;
   z-index: 9999;
 }
 
@@ -677,22 +680,118 @@ button {
   pointer-events: all;
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
+.lightbox_content {
+  position: relative;
+  width: 95%;
+  max-width: 1300px;
+  min-height: 600px;
+  border-radius: 24px;
+  padding: 60px;
+  display: flex;
+  gap: 60px;
+
+  background: linear-gradient(145deg, #1a1a2e, #111120);
+  box-shadow: 0 0 60px rgba(255, 0, 120, 0.3);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transform: scale(.9);
+  transition: .4s ease;
 }
+
+.lightbox.active .lightbox_content {
+  transform: scale(1);
+}
+
+/* ЛЕВАЯ ЧАСТЬ */
+
+.lightbox_left {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox_left img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transition: .4s ease;
+}
+
+.lightbox_left img:hover {
+  transform: scale(1.02);
+}
+
+/* ПРАВАЯ ЧАСТЬ */
+
+.lightbox_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lightbox_right h2 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff4b7d, #7d4bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lightbox_right p {
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+/* КНОПКА */
+
+.lightbox_btn {
+  align-self: flex-start;
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+
+  background: linear-gradient(90deg, #ff4b7d, #7d4bff);
+  box-shadow: 0 10px 40px rgba(125, 75, 255, 0.5);
+
+  transition: .3s ease;
+}
+
+.lightbox_btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 50px rgba(125, 75, 255, 0.8);
+}
+
+/* КРЕСТИК */
 
 .lightbox_close {
   position: absolute;
   top: 30px;
   right: 40px;
-  font-size: 40px;
+  font-size: 38px;
   color: #fff;
   cursor: pointer;
-  transition: .3s ease;
+  transition: .5s;
 }
 
 .lightbox_close:hover {
-  color: red;
+  color: #ff4b7d;
+  transform: rotate(190deg);
 }
+
+
+
+
+.btns {
+   display: flex;
+   gap: 16px;
+}
+

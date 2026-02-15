@@ -307,23 +307,48 @@ if (contactBtn && waModal) {
 
 }
 
+const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
 function lockScroll() {
    document.body.style.overflow = 'hidden';
+   document.body.style.paddingRight = scrollBarWidth + "px";
 }
 
 function unlockScroll() {
    document.body.style.overflow = '';
+   document.body.style.paddingRight = '';
 }
 
- const images = [
-   'https://files.catbox.moe/d3ie81.png',
-   'https://files.catbox.moe/229rgz.png',
-   'https://files.catbox.moe/0s5ycm.png'
-  ];
+const projects = [
+  {
+    img: 'https://files.catbox.moe/d3ie81.png',
+    title: 'Coffee Landing',
+    text: 'Современный адаптивный лендинг для кофейного бренда с акцентом на визуал, атмосферу и плавные анимации. И нтерактивные карточки и чистая верстка без использования фреймворков. Основной фокус проекта — UI/UX, аккуратная типографика и эффектная подача продукта.',
+    link: 'https://твой-сайт1.github.io'
+  },
+  {
+    img: 'https://files.catbox.moe/229rgz.png',
+    title: 'Cozy View — Ремонт квартир',
+    text: 'Многофункциональный лендинг строительной компании с пошаговой формой заявки, валидацией данных и защитой от спама. Интеграция Cloudflare Worker для безопасной отправки заявок в Telegram. Проект включает адаптивную верстку, модальные окна, анимации и современный визуальный стиль.',
+    link: 'https://твой-сайт2.github.io'
+  },
+  {
+    img: 'https://files.catbox.moe/0s5ycm.png',
+    title: 'Magenta — Веб-курс',
+    text: 'Продающий лендинг онлайн-курса с продуманной структурой, тарифными блоками и интерактивными элементами. Использованы градиенты, плавные переходы и динамические эффекты для создания современного digital-стиля. Основная задача — показать ценность продукта и повысить конверсию.',
+    link: 'https://твой-сайт3.github.io'
+  }
+];
+
+
 
   let currentIndex = 0;
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox_img');
+  const lightboxTitle = document.getElementById('lightbox_title');
+  const lightboxText = document.getElementById('lightbox_text');
+  const lightboxLink = document.getElementById('lightbox_link');
+
 
   window.openLightbox = index => {
     currentIndex = index;
@@ -341,6 +366,21 @@ function unlockScroll() {
     currentIndex = (currentIndex + step + images.length) % images.length;
     lightboxImg.src = images[currentIndex];
   };
+
+
+
+window.openLightbox = index => {
+  currentIndex = index;
+
+  lightboxImg.src = projects[index].img;
+  lightboxTitle.textContent = projects[index].title;
+  lightboxText.textContent = projects[index].text;
+  lightboxLink.href = projects[index].link;
+
+  lightbox.classList.add('active');
+  lockScroll();
+};
+
 
   lightbox.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox();
